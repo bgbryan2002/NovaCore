@@ -1,39 +1,71 @@
-# Ignore virtual environments
-env/
-venv/
-.venv/
-whisper-env/
+# ─── Environment Variables ─────────────────────────────
+.env
+.env.*
 
-# Ignore system files and editors
+# ─── Python Bytecode and Build ─────────────────────────
 __pycache__/
-.ipynb_checkpoints/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+develop-eggs/
+downloads/
+sdist/
+var/
+wheels/
+lib/
+lib64/
+parts/
+.installed.cfg
+
+# ─── Virtual Environments ──────────────────────────────
+whisper-env/
+venv/
+ENV/
+
+# ─── IDE and Editor Files ──────────────────────────────
 .vscode/
+.idea/
+*.swp
+*.swo
+.ipynb_checkpoints/
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# ─── Audio and Binary Files ────────────────────────────
+*.mp3
+*.wav
+*.exe
+*.zip
+*.7z
+
+# ─── Logs and Temp Files ───────────────────────────────
 *.log
 *.bak
 *.tmp
-*.swp
 *.out
 
-# Ignore compiled and binary files
-*.pyc
-*.pyo
-*.pyd
-*.exe
-*.7z
-*.zip
-
-# Ignore generated files
+# ─── Generated Reports (Exclude All, Then Include Key Ones) ──────
 *.md
 *.pdf
 *.json
 *.txt
 
-# But keep these specific JSON files:
+# Allowlist key output and config files
+!README.md
+!meeting_report.md
+!meeting_report.pdf
 !attendees_db.json
 !email_config.json
-
-# But keep the main transcript
 !full_transcript.txt
 !segments.json
+!.env.example
+
+# ─── Logs ───────────────────────────────────────────────
+meeting_analysis.log

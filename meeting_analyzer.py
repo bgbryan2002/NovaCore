@@ -16,6 +16,10 @@ import markdown
 import pdfkit
 import time
 from tenacity import retry, stop_after_attempt, wait_exponential
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Configure logging
 logging.basicConfig(
@@ -28,7 +32,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Configure OpenAI client with timeout
+# Configure OpenAI client with timeout and API key from environment
+openai.api_key = os.getenv('OPENAI_API_KEY')
 openai.timeout = 30  # 30 seconds timeout
 
 @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=4, max=10))
@@ -82,11 +87,12 @@ class Speaker:
     email: Optional[str] = None
 
 class MeetingAnalyzer:
-    def __init__(self):
+    def __init__(self, email_config):
         """Initialize the meeting analyzer with API keys and models."""
         self.openai_client = openai
         self.speakers: Dict[str, Speaker] = {}
         self.attendee_db = AttendeeDatabase()
+        self.email_config = email_config
         
     def transcribe_audio(self, audio_file: str) -> Tuple[str, List[Dict]]:
         """Transcribe audio using faster_whisper."""
@@ -450,15 +456,15 @@ class MeetingAnalyzer:
         logger.info(f"Meeting report saved to {output_file}" + (f" and {pdf_file}" if pdf_generated else " (PDF generation failed)"))
         return report, pdf_generated
 
-    def send_email_summaries(self, email_config: Dict) -> None:
+    def send_email_summaries(self) -> None:
         """Send individual summaries to each participant."""
         logger.info("Sending email summaries to participants")
         
         try:
             # Setup SMTP connection
-            smtp = smtplib.SMTP(email_config["smtp_server"], email_config["smtp_port"])
+            smtp = smtplib.SMTP(self.email_config.smtp_server, self.email_config.smtp_port)
             smtp.starttls()
-            smtp.login(email_config["username"], email_config["password"])
+            smtp.login(self.email_config.username, self.email_config.password)
             
             # Read the full report files
             with open("meeting_report.md", "r", encoding="utf-8") as f:
@@ -505,7 +511,7 @@ Meeting Analyzer"""
                 
                 # Create message
                 msg = MIMEMultipart()
-                msg["From"] = email_config["from_email"]
+                msg["From"] = self.email_config.from_email
                 msg["To"] = speaker.email
                 msg["Subject"] = subject
                 
@@ -534,55 +540,51 @@ Meeting Analyzer"""
             logger.error(f"Failed to send email summaries: {str(e)}")
             raise
 
-def main(audio_file: str, openai_api_key: Optional[str] = None, email_config: Optional[Dict[str, str]] = None):
-    """Main function to run the entire meeting analysis pipeline."""
-    logger.info("Starting transcription")
-    
+def main(audio_file: str, openai_key: str = None, email_config_file: str = None):
+    """Main function to process the audio file and generate reports."""
     try:
-        # Initialize analyzer
-        analyzer = MeetingAnalyzer()
+        # Set OpenAI key if provided, otherwise use environment variable
+        if openai_key:
+            openai.api_key = openai_key
         
-        # Step 1: Transcribe audio
-        logger.info("Starting audio transcription")
-        full_text, segments = analyzer.transcribe_audio(audio_file)
+        # Initialize email configuration
+        email_config = EmailConfig(email_config_file)
         
-        # Step 2: Identify speakers
-        logger.info("Identifying speakers")
+        # Create analyzer instance
+        analyzer = MeetingAnalyzer(email_config)
+        
+        # Process the audio file
+        logger.info("Starting transcription")
+        segments = analyzer.transcribe_audio(audio_file)
+        
+        # Identify speakers
         speakers = analyzer.identify_speakers(segments)
         
-        # Step 3: Extract action items
+        # Extract action items for each speaker
         logger.info("Extracting action items")
         for speaker in speakers.values():
             analyzer.extract_action_items(speaker)
         
-        # Step 4: Generate meeting report
+        # Generate and save the meeting report
         logger.info("Generating meeting report")
-        report, pdf_generated = analyzer.generate_meeting_report()
+        md_file, pdf_generated = analyzer.generate_meeting_report()
         
-        # Step 5: Send email summaries if configured
-        if email_config:
-            logger.info("Sending email summaries")
-            analyzer.send_email_summaries(email_config)
-            
+        # Send email summaries
+        logger.info("Sending email summaries")
+        analyzer.send_email_summaries()
+        
+        logger.info("Meeting analysis completed successfully")
+        
     except Exception as e:
         logger.error(f"Meeting analysis failed: {str(e)}")
         raise
 
 if __name__ == "__main__":
     import argparse
-    
     parser = argparse.ArgumentParser(description="Analyze meeting audio and generate reports")
-    parser.add_argument("audio_file", help="Path to the audio file to analyze")
-    parser.add_argument("--openai-key", help="OpenAI API key (optional if set via OPENAI_API_KEY environment variable)", required=False)
-    parser.add_argument("--email-config", help="Path to email configuration JSON file")
-    
+    parser.add_argument("audio_file", help="Path to the audio file")
+    parser.add_argument("--openai-key", help="OpenAI API key (optional, can use environment variable)")
+    parser.add_argument("--email-config", help="Path to email configuration file (optional, can use environment variables)")
     args = parser.parse_args()
     
-    # Load email config if provided
-    email_config = None
-    if args.email_config:
-        with open(args.email_config, "r") as f:
-            email_config = json.load(f)
-    
-    # Run the analysis
-    main(args.audio_file, args.openai_key, email_config)
+    main(args.audio_file, args.openai_key, args.email_config)
