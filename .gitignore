@@ -45,6 +45,9 @@ desktop.ini
 *.zip
 *.7z
 
+# Allow demo audio file
+!Senior Project Demo.mp3
+
 # ─── Logs and Temp Files ───────────────────────────────
 *.log
 *.bak
