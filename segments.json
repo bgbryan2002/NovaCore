@@ -1,0 +1,772 @@
+[
+  {
+    "start": 0.0,
+    "end": 6.54,
+    "text": " What's going on, everybody?"
+  },
+  {
+    "start": 6.54,
+    "end": 11.46,
+    "text": " We are AfroSec Analytics, and this is our early demo program."
+  },
+  {
+    "start": 11.46,
+    "end": 15.9,
+    "text": " My name is Brennan Bryan, and I'm here with my teammates, Niall Austin, Brian Ford, and"
+  },
+  {
+    "start": 15.9,
+    "end": 16.9,
+    "text": " Danny Grandison."
+  },
+  {
+    "start": 16.9,
+    "end": 23.84,
+    "text": " Imani Montgomery is out today."
+  },
+  {
+    "start": 23.84,
+    "end": 28.66,
+    "text": " So the main overview of our project, our project focuses on developing a machine"
+  },
+  {
+    "start": 28.7,
+    "end": 33.54,
+    "text": " learning A.I. model for fraud detection in banks using transfer learning."
+  },
+  {
+    "start": 34.06,
+    "end": 38.019999999999996,
+    "text": " We will train the model with a labeled data set containing both fraudulent and"
+  },
+  {
+    "start": 38.019999999999996,
+    "end": 42.38,
+    "text": " non-fraudulent transactions in order to enhance its accuracy and identifying"
+  },
+  {
+    "start": 42.38,
+    "end": 43.38,
+    "text": " fraudulent activity."
+  },
+  {
+    "start": 43.86,
+    "end": 47.94,
+    "text": " The project aims to leverage pre-trained models and adapt them to our specific"
+  },
+  {
+    "start": 47.94,
+    "end": 50.42,
+    "text": " data set to improve detection efficiency."
+  },
+  {
+    "start": 51.260000000000005,
+    "end": 55.260000000000005,
+    "text": " And our goal is to create a reliable and scalable fraud detection system that"
+  },
+  {
+    "start": 55.3,
+    "end": 59.3,
+    "text": " minimizes false positives while accurately flagging fraudulent transactions."
+  },
+  {
+    "start": 64.42,
+    "end": 67.9,
+    "text": " So we had our last meeting last week."
+  },
+  {
+    "start": 68.3,
+    "end": 73.62,
+    "text": " So these are the updates that we had from those meetings, from that meeting."
+  },
+  {
+    "start": 75.14,
+    "end": 78.1,
+    "text": " What we accomplished from that meeting, what we accomplished from that meeting was"
+  },
+  {
+    "start": 78.1,
+    "end": 81.14,
+    "text": " that we met with our advisor for the second time."
+  },
+  {
+    "start": 81.5,
+    "end": 86.82,
+    "text": " We did a better job narrowing down our scope for the project so we can know what's"
+  },
+  {
+    "start": 86.82,
+    "end": 89.06,
+    "text": " doable in a semester."
+  },
+  {
+    "start": 89.5,
+    "end": 96.42,
+    "text": " And we also began to go into the data set on details that we need and what we"
+  },
+  {
+    "start": 96.42,
+    "end": 102.7,
+    "text": " need to do to make sure that the data sets that we find will be sufficient"
+  },
+  {
+    "start": 102.7,
+    "end": 104.22,
+    "text": " for our project."
+  },
+  {
+    "start": 105.06,
+    "end": 111.06,
+    "text": " We also developed an understanding of anomalies so we can know how to detect"
+  },
+  {
+    "start": 111.06,
+    "end": 112.26,
+    "text": " them in the data set."
+  },
+  {
+    "start": 112.74000000000001,
+    "end": 122.26,
+    "text": " Basically, an anomaly is just seeing what outliers are in the data set to figure"
+  },
+  {
+    "start": 122.26,
+    "end": 125.42,
+    "text": " out whether or not it could be fraud or not in making that decision."
+  },
+  {
+    "start": 125.42,
+    "end": 131.26,
+    "text": " So we had to, you know, continue to research and figure out a way to use"
+  },
+  {
+    "start": 131.26,
+    "end": 134.38,
+    "text": " that in our AR detection."
+  },
+  {
+    "start": 134.9,
+    "end": 139.78,
+    "text": " We also developed an understanding of machine learning pipeline as well as"
+  },
+  {
+    "start": 139.78,
+    "end": 144.3,
+    "text": " learning how to deploy it within Docker containers, which we will demonstrate"
+  },
+  {
+    "start": 144.3,
+    "end": 149.46,
+    "text": " later on in this announcement."
+  },
+  {
+    "start": 149.86,
+    "end": 154.1,
+    "text": " And we also discussed a tentative plan for implementation."
+  },
+  {
+    "start": 155.98,
+    "end": 161.38,
+    "text": " The decisions we made from this meeting was that we determined specific"
+  },
+  {
+    "start": 161.38,
+    "end": 165.9,
+    "text": " characteristics for our data set that we intend to train our AI model on,"
+  },
+  {
+    "start": 165.9,
+    "end": 168.78,
+    "text": " which we will also demonstrate later on."
+  },
+  {
+    "start": 169.18,
+    "end": 175.58,
+    "text": " We also determined what we're going to research for our later AI models that we're"
+  },
+  {
+    "start": 175.58,
+    "end": 181.98,
+    "text": " going to use so we can grasp how they detect fraudulent activities so we can"
+  },
+  {
+    "start": 181.98,
+    "end": 184.26,
+    "text": " use that for our AI model."
+  },
+  {
+    "start": 184.82,
+    "end": 189.86,
+    "text": " And we also decided that we're going to use more contextual and collective"
+  },
+  {
+    "start": 189.86,
+    "end": 193.66,
+    "text": " anomaly types to use that for our fraud discussions."
+  },
+  {
+    "start": 194.66,
+    "end": 201.02,
+    "text": " And we also decided to use supervised learning because we weren't able, well,"
+  },
+  {
+    "start": 201.02,
+    "end": 205.01999999999998,
+    "text": " we were able to find a label data set that already had anomalies."
+  },
+  {
+    "start": 205.82,
+    "end": 208.42,
+    "text": " So we're just going to use that as reference."
+  },
+  {
+    "start": 209.22,
+    "end": 214.9,
+    "text": " And we also, we finally decided to visualize our categorized anomalies"
+  },
+  {
+    "start": 214.9,
+    "end": 216.22,
+    "text": " within the data set."
+  },
+  {
+    "start": 216.34,
+    "end": 222.18,
+    "text": " So we're going to have like a column specifically for each anomaly."
+  },
+  {
+    "start": 223.14000000000001,
+    "end": 229.78,
+    "text": " And our next steps are, we will update project scope proposal and elevator"
+  },
+  {
+    "start": 229.78,
+    "end": 235.34,
+    "text": " pitch, but based on the final scope that we made, and we will develop a"
+  },
+  {
+    "start": 235.34,
+    "end": 238.42000000000002,
+    "text": " project execution plan and delegate tasks from there."
+  },
+  {
+    "start": 239.02,
+    "end": 243.18,
+    "text": " We also submit our meeting minutes and individual sprint retrospective"
+  },
+  {
+    "start": 243.22,
+    "end": 244.18,
+    "text": " by that date as well."
+  },
+  {
+    "start": 244.18,
+    "end": 248.94,
+    "text": " And for the data set here, we have a data set that was found on Kaggle,"
+  },
+  {
+    "start": 248.98000000000002,
+    "end": 253.98000000000002,
+    "text": " which is basically like a website where people can put data sets together"
+  },
+  {
+    "start": 254.38,
+    "end": 255.34,
+    "text": " and just share them."
+  },
+  {
+    "start": 256.98,
+    "end": 262.14,
+    "text": " And so this data set has baked online and in-person baked transactions"
+  },
+  {
+    "start": 262.62,
+    "end": 267.78000000000003,
+    "text": " with some of them that are flagged as fraud, so that when we feed it to"
+  },
+  {
+    "start": 267.78000000000003,
+    "end": 272.5,
+    "text": " the machine learning algorithm, we can see what's going on in the data"
+  },
+  {
+    "start": 272.66,
+    "end": 276.46,
+    "text": " machine learning algorithm that that's able to determine what's what."
+  },
+  {
+    "start": 277.82,
+    "end": 282.26,
+    "text": " And so some of the, I'm going to say criteria we have is like the type"
+  },
+  {
+    "start": 282.26,
+    "end": 284.14,
+    "text": " of payment, the amount of payment."
+  },
+  {
+    "start": 285.1,
+    "end": 290.66,
+    "text": " And I'm going to say the name origin is basically the customer who made"
+  },
+  {
+    "start": 290.66,
+    "end": 295.38,
+    "text": " the transaction and then you had the balance before the payment, the"
+  },
+  {
+    "start": 295.38,
+    "end": 300.3,
+    "text": " balance after the payment, and then the name destination is the person"
+  },
+  {
+    "start": 300.46,
+    "end": 302.26,
+    "text": " who's receiving the payment."
+  },
+  {
+    "start": 303.22,
+    "end": 306.5,
+    "text": " And then the old balance of the old of the person who's receiving it and"
+  },
+  {
+    "start": 306.5,
+    "end": 309.34,
+    "text": " the balance of the person is receiving it."
+  },
+  {
+    "start": 310.5,
+    "end": 313.02,
+    "text": " And then we have if it's fraud or not."
+  },
+  {
+    "start": 318.34,
+    "end": 318.66,
+    "text": " Cool."
+  },
+  {
+    "start": 318.66,
+    "end": 322.7,
+    "text": " So now for the early demo, one of the things I've been trying"
+  },
+  {
+    "start": 322.7,
+    "end": 330.1,
+    "text": " to do with Docker is to deploy a lightweight application called a"
+  },
+  {
+    "start": 330.14000000000004,
+    "end": 333.86,
+    "text": " Flask app, just some background about Docker."
+  },
+  {
+    "start": 334.58000000000004,
+    "end": 337.66,
+    "text": " Docker is a platform as a service product that allows users to"
+  },
+  {
+    "start": 337.66,
+    "end": 340.26000000000005,
+    "text": " virtualize containers and host applications within them."
+  },
+  {
+    "start": 340.82000000000005,
+    "end": 344.66,
+    "text": " Containers are an isolated environment that can run any code."
+  },
+  {
+    "start": 346.78000000000003,
+    "end": 350.74,
+    "text": " I've been trying to build an image of a container background about"
+  },
+  {
+    "start": 350.74,
+    "end": 354.26000000000005,
+    "text": " images is that it's a read only template that contains the"
+  },
+  {
+    "start": 354.26000000000005,
+    "end": 358.62,
+    "text": " instructions for creating a Docker container and includes a application"
+  },
+  {
+    "start": 358.62,
+    "end": 362.38,
+    "text": " code, libraries, dependencies, and configuration files needed to run"
+  },
+  {
+    "start": 362.38,
+    "end": 363.18,
+    "text": " the application."
+  },
+  {
+    "start": 363.9,
+    "end": 366.86,
+    "text": " Images are built in a Docker file, which defines the steps to"
+  },
+  {
+    "start": 366.86,
+    "end": 370.58,
+    "text": " create an image and images are stored in a Docker registry or"
+  },
+  {
+    "start": 370.58,
+    "end": 373.5,
+    "text": " Docker hub and can be shared and or reused."
+  },
+  {
+    "start": 373.9,
+    "end": 376.78000000000003,
+    "text": " Images are immutable, meaning that once created, it cannot be"
+  },
+  {
+    "start": 376.78000000000003,
+    "end": 379.42,
+    "text": " changed and to update an image, you must create a new one."
+  },
+  {
+    "start": 379.98,
+    "end": 382.26,
+    "text": " I like to think of an image as kind of a blueprint or a"
+  },
+  {
+    "start": 382.26,
+    "end": 386.02,
+    "text": " snapshot of a file system with all the necessary components to"
+  },
+  {
+    "start": 386.02,
+    "end": 386.94,
+    "text": " run the application."
+  },
+  {
+    "start": 387.7,
+    "end": 392.46,
+    "text": " A container, which again is built from an image or is a"
+  },
+  {
+    "start": 392.46,
+    "end": 396.74,
+    "text": " running instance of an image, is when you start a container,"
+  },
+  {
+    "start": 397.18,
+    "end": 400.22,
+    "text": " Docker uses the image to create a writeable layer called a"
+  },
+  {
+    "start": 400.22,
+    "end": 403.62,
+    "text": " container layer on top of the readable only image."
+  },
+  {
+    "start": 404.22,
+    "end": 407.58,
+    "text": " This allows the container to run the application and make"
+  },
+  {
+    "start": 407.58,
+    "end": 410.3,
+    "text": " changes during its lifecycle so they are immutable."
+  },
+  {
+    "start": 410.94,
+    "end": 413.5,
+    "text": " Containers are isolated, lightweight, and portable"
+  },
+  {
+    "start": 413.5,
+    "end": 417.3,
+    "text": " environments where applications can run independently of the"
+  },
+  {
+    "start": 417.3,
+    "end": 417.94,
+    "text": " whole system."
+  },
+  {
+    "start": 418.86,
+    "end": 421.34,
+    "text": " Containers can be started, stopped, moved, or deleted."
+  },
+  {
+    "start": 422.02,
+    "end": 425.82,
+    "text": " Changes made to a container, for example, writing files,"
+  },
+  {
+    "start": 425.82,
+    "end": 429.14,
+    "text": " installing software, are temporary and only exist when"
+  },
+  {
+    "start": 429.14,
+    "end": 432.5,
+    "text": " the container is running unless explicitly committed to a new"
+  },
+  {
+    "start": 432.5,
+    "end": 436.26,
+    "text": " image or blueprint of a container."
+  },
+  {
+    "start": 437.86,
+    "end": 441.18,
+    "text": " Think of a container as a live running process based on"
+  },
+  {
+    "start": 441.18,
+    "end": 442.82,
+    "text": " the blueprint or image."
+  },
+  {
+    "start": 443.34,
+    "end": 445.26,
+    "text": " It's the actual house built from the blueprint."
+  },
+  {
+    "start": 446.14,
+    "end": 449.14,
+    "text": " So as I said before, I'm going to go to Docker right now."
+  },
+  {
+    "start": 455.38,
+    "end": 456.18,
+    "text": " Y'all still see my screen?"
+  },
+  {
+    "start": 458.86,
+    "end": 459.7,
+    "text": " Yeah, we can see it."
+  },
+  {
+    "start": 459.7,
+    "end": 460.9,
+    "text": " It's still on the slides."
+  },
+  {
+    "start": 461.7,
+    "end": 463.5,
+    "text": " Yeah, it didn't move under the Docker yet."
+  },
+  {
+    "start": 464.38,
+    "end": 466.18,
+    "text": " I think that's your mind charge."
+  },
+  {
+    "start": 467.42,
+    "end": 467.86,
+    "text": " What about now?"
+  },
+  {
+    "start": 468.7,
+    "end": 469.78000000000003,
+    "text": " Yeah, we can see your old screen."
+  },
+  {
+    "start": 470.5,
+    "end": 471.02000000000004,
+    "text": " Okay."
+  },
+  {
+    "start": 473.82,
+    "end": 475.34000000000003,
+    "text": " So this is the Docker homepage."
+  },
+  {
+    "start": 475.82,
+    "end": 479.54,
+    "text": " As you see, I've kind of made some makeshift containers down here,"
+  },
+  {
+    "start": 479.54,
+    "end": 484.82,
+    "text": " kind of just running my own first container or whatever."
+  },
+  {
+    "start": 485.46000000000004,
+    "end": 490.54,
+    "text": " This comes as a tutorial in the Docker app, but my goal was"
+  },
+  {
+    "start": 490.54,
+    "end": 495.78000000000003,
+    "text": " to create my own image, for instance, of an image that I"
+  },
+  {
+    "start": 496.02000000000004,
+    "end": 500.3,
+    "text": " or instance of a Docker image."
+  },
+  {
+    "start": 501.1,
+    "end": 504.38000000000005,
+    "text": " And I'm doing that at Python by making my own Flask app."
+  },
+  {
+    "start": 505.98,
+    "end": 509.06000000000006,
+    "text": " Some background about Flask is that it's a lightweight and popular"
+  },
+  {
+    "start": 509.06000000000006,
+    "end": 512.1,
+    "text": " Python web framework used for building web applications and"
+  },
+  {
+    "start": 512.1,
+    "end": 515.1800000000001,
+    "text": " APIs or application programming interfaces."
+  },
+  {
+    "start": 515.5400000000001,
+    "end": 518.94,
+    "text": " It's known for its simplicity, flexibility, and ease of use,"
+  },
+  {
+    "start": 518.98,
+    "end": 521.82,
+    "text": " making it a great choice for both beginners and experienced developers."
+  },
+  {
+    "start": 522.38,
+    "end": 526.38,
+    "text": " Flask is often referred to as a Michael framework because it provides"
+  },
+  {
+    "start": 526.38,
+    "end": 529.86,
+    "text": " the essentials for web development without imposing too many"
+  },
+  {
+    "start": 530.1800000000001,
+    "end": 532.34,
+    "text": " restrictions or dependencies."
+  },
+  {
+    "start": 532.5400000000001,
+    "end": 534.74,
+    "text": " So basically right here, I'm kind of just trying to make a hello"
+  },
+  {
+    "start": 534.74,
+    "end": 543.46,
+    "text": " Docker page, you know, show when deployed this Flask app with the"
+  },
+  {
+    "start": 543.46,
+    "end": 549.46,
+    "text": " provided code running Python app dot pod, which is the name of the file."
+  },
+  {
+    "start": 550.22,
+    "end": 558.98,
+    "text": " Starts a development server at HTTP 127.0.0.1 colon 5,000 dash last"
+  },
+  {
+    "start": 559.38,
+    "end": 562.7,
+    "text": " visiting this URL in my browser triggers the hello world function,"
+  },
+  {
+    "start": 563.0600000000001,
+    "end": 565.9000000000001,
+    "text": " which returns hello world as a response displaying it on the page."
+  },
+  {
+    "start": 566.38,
+    "end": 570.26,
+    "text": " The terminal logs that server set status and requests showing running"
+  },
+  {
+    "start": 570.26,
+    "end": 575.5400000000001,
+    "text": " on that HTTP page and request details for production."
+  },
+  {
+    "start": 576.3,
+    "end": 581.5,
+    "text": " Um, I should use a server like GU unicorn instead of Flask"
+  },
+  {
+    "start": 581.5,
+    "end": 584.14,
+    "text": " built, uh, in development servers."
+  },
+  {
+    "start": 584.66,
+    "end": 587.5,
+    "text": " Um, basically I'm still trying to learn or figure out how to deploy"
+  },
+  {
+    "start": 587.5,
+    "end": 589.42,
+    "text": " this directly into, um, Docker."
+  },
+  {
+    "start": 589.9399999999999,
+    "end": 593.0999999999999,
+    "text": " Um, as of right now, it's kind of just running on my computer."
+  },
+  {
+    "start": 593.66,
+    "end": 597.8199999999999,
+    "text": " Um, the page isn't even showing up to be honest with you, but I'm"
+  },
+  {
+    "start": 597.8199999999999,
+    "end": 602.3399999999999,
+    "text": " still in the stages of finding out the best way to, um, deploy these"
+  },
+  {
+    "start": 602.3399999999999,
+    "end": 605.38,
+    "text": " type of, um, many apps into Docker."
+  },
+  {
+    "start": 605.9399999999999,
+    "end": 611.02,
+    "text": " My next steps would be to, um, after this, I deploy this Flask AI"
+  },
+  {
+    "start": 611.74,
+    "end": 617.8199999999999,
+    "text": " would be to, uh, Docker rise a Python app and then, uh, a fast API."
+  },
+  {
+    "start": 618.5799999999999,
+    "end": 624.5,
+    "text": " And then, um, hopefully host a machine learning or AI, uh,"
+  },
+  {
+    "start": 625.4599999999999,
+    "end": 627.14,
+    "text": " program within the container."
+  },
+  {
+    "start": 627.9399999999999,
+    "end": 629.98,
+    "text": " And I'm kind of just scaling up to that point right now."
+  },
+  {
+    "start": 630.06,
+    "end": 633.74,
+    "text": " Starting at ground zero with this Flask app, uh, which is my"
+  },
+  {
+    "start": 633.74,
+    "end": 635.54,
+    "text": " own code and things like that."
+  },
+  {
+    "start": 640.58,
+    "end": 643.86,
+    "text": " But yeah, um, that is all for, uh, Afro set today."
+  },
+  {
+    "start": 644.42,
+    "end": 647.74,
+    "text": " Um, thank you for your time and, uh, we'll see you again later."
+  }
+]
