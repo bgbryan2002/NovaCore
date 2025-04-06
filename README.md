@@ -86,12 +86,6 @@ Runs the full analysis pipeline with default audio file (`Senior Project Demo.mp
 .\run_meeting.bat
 ```
 
-#### `run_analyzer.bat`
-Custom run with different settings or input
-```bash
-.\run_analyzer.bat
-```
-
 ---
 
 ### 🐍 Option 2: Python Execution (More flexible)
