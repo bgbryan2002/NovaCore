@@ -1,6 +1,3 @@
-Absolutely — here's your **final polished `README.md`**, keeping your original format and tone but updated for clarity, environment variable usage, and future n8n integration:
-
----
 
 # Meeting Analyzer
 
