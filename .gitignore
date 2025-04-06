@@ -1,0 +1,39 @@
+# Ignore virtual environments
+env/
+venv/
+.venv/
+whisper-env/
+
+# Ignore system files and editors
+__pycache__/
+.ipynb_checkpoints/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
+*.bak
+*.tmp
+*.swp
+*.out
+
+# Ignore compiled and binary files
+*.pyc
+*.pyo
+*.pyd
+*.exe
+*.7z
+*.zip
+
+# Ignore generated files
+*.md
+*.pdf
+*.json
+*.txt
+
+# But keep these specific JSON files:
+!attendees_db.json
+!email_config.json
+
+# But keep the main transcript
+!full_transcript.txt
+!segments.json

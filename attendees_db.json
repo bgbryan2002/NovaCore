@@ -1,0 +1,52 @@
+{
+    "attendees": {
+        "Bryan": {
+            "name": "Bryan",
+            "email": "bryan1024444@gmail.com",
+            "role": "Team Member",
+            "last_meeting": null
+        },
+        "Brennan Bryan": {
+            "name": "Brennan Bryan",
+            "email": "Bryan1024444@gmail.com",
+            "role": "Group Leader",
+            "last_meeting": "2025-04-04T22:49:47.412383"
+        },
+        "Niall Austin": {
+            "name": "Niall Austin",
+            "email": "ford102468@gmail.com",
+            "role": "Member",
+            "last_meeting": "2025-04-04T22:50:19.227724"
+        },
+        "Brian Ford": {
+            "name": "Brian Ford",
+            "email": "ford102468@gmail.com",
+            "role": "Member",
+            "last_meeting": "2025-04-04T22:50:49.300958"
+        },
+        "Danny Grandison": {
+            "name": "Danny Grandison",
+            "email": "Bryan1024444@gmail.com",
+            "role": "Member",
+            "last_meeting": "2025-04-04T22:51:17.129067"
+        },
+        "Brendan Bryan": {
+            "name": "Brendan Bryan",
+            "email": "bryan1024444@gmail.com",
+            "role": "Group Leader",
+            "last_meeting": "2025-04-04T23:13:01.051282"
+        },
+        "Nyle Austin": {
+            "name": "Nyle Austin",
+            "email": "ford102468@gmail.com",
+            "role": "Member",
+            "last_meeting": "2025-04-04T23:13:46.272138"
+        },
+        "Imani Montgomery": {
+            "name": "Imani Montgomery",
+            "email": "ford102468@gmail.com",
+            "role": "Member",
+            "last_meeting": "2025-04-04T23:14:31.888491"
+        }
+    }
+}
