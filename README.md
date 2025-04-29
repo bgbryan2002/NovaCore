@@ -4,7 +4,7 @@ An automated meeting analysis tool that transcribes audio, identifies speakers, 
 
 ---
 
-## 🚀 Features
+## Features
 
 - 🎙️ Audio transcription using Whisper
 - 👥 Speaker identification and verification
